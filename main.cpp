@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "include/portaudio.h"
+#include "src/simple_audio_source.hpp"
 
 int main(int argc, char** argv)
 {
