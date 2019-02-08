@@ -4,7 +4,7 @@
         {
             "label": "build scratcher",
             "type": "shell",
-            "command": "gcc main.cpp -o build/scratcher"
+            "command": "g++ main.cpp -o build/scratcher"
         }
     ]
 }
