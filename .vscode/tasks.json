@@ -4,7 +4,7 @@
         {
             "label": "build scratcher",
             "type": "shell",
-            "command": "g++ main.cpp -o build/scratcher",
+            "command": "g++ main.cpp -lmpg123 -lao -o build/scratcher",
             "group": "build",
             "presentation": {
                 "echo": true,
