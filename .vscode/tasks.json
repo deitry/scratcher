@@ -4,7 +4,16 @@
         {
             "label": "build scratcher",
             "type": "shell",
-            "command": "g++ main.cpp -o build/scratcher"
-        }
+            "command": "g++ main.cpp -o build/scratcher",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []        }
     ]
 }
