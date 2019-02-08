@@ -1,6 +1,12 @@
 # исключаем генерируемые файлы
 build/
 
+# генерируемые файлы cmake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
 # т.к. папка .vscode включена для переносимости настроек,
 # исключаем кэш
 .vscode/*cache*
