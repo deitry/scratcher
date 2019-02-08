@@ -1,0 +1,10 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build scratcher",
+            "type": "shell",
+            "command": "gcc main.cpp -o build/scratcher"
+        }
+    ]
+}
