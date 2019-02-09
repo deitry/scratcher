@@ -1,18 +1,37 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-project(scrather)
+set(PROJECT scratcher)
+project(${PROJECT})
 
-# set(REQUIRED_QT_VERSION 5.9.1)
-# find_package(Qt5 ${REQUIRED_QT_VERSION}
-#     CONFIG REQUIRED
-#     Core Multimedia)
-
-find_package(Qt5Multimedia REQUIRED)
-
-# Генерировать moc-файлы автоматически
-# set(CMAKE_AUTOMOC ON)
-
-add_executable(scratcher
-    main.cpp
+set(CMAKE_CXX_FLAGS
+    "-Wall -fPIC -std=c++11 -DQT_NO_VERSION_TAGGING -rdynamic"
 )
 
-# target_link_libraries(scratcher Qt5::Multimedia)
+# Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+find_package(Qt5 COMPONENTS Core Multimedia Widgets REQUIRED)
+
+include_directories(
+    ${Qt5Core_INCLUDE_DIRS}
+    ${Qt5Multimedia_INCLUDE_DIRS}
+    ${Qt5Widgets_INCLUDE_DIRS}
+)
+
+# Генерировать moc-файлы автоматически
+set(CMAKE_AUTOMOC ON)
+
+set(SOURCES
+    main.cpp
+    src/application.cpp
+    src/audio_player.cpp
+)
+
+add_executable(${PROJECT} ${SOURCES})
+
+# Libs
+set(LIBRARIES
+    Qt5::Core
+    Qt5::Multimedia
+)
+
+target_link_libraries (${PROJECT} ${LIBRARIES})

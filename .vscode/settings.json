@@ -1,6 +1,9 @@
 {
     "cquery.cacheDirectory": "${workspaceFolder}/.vscode/cquery_cached_index/",
     "cmake.configureArgs": [
-        "-DCMAKE_PREFIX_PATH=/opt/Qt/5.9.1/gcc_64/lib/cmake"
-    ]
+        "-DCMAKE_PREFIX_PATH=/opt/Qt/5.9.1/gcc_64"
+    ],
+    // "cmake.environment": {
+    //     "LD_LIBRARY_PATH": "/opt/Qt/5.9.1/gcc_64/lib"
+    // }
 }

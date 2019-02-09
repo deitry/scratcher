@@ -2,9 +2,32 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "clear",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "CMakeFiles/*",
+                "build/*"
+            ],
+            "group": "none",
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false
+            },
+        },
+        {
             "label": "build scratcher",
             "type": "shell",
-            "command": "cmake .",
+            "command": "cmake",
+            "args": [
+                "-DCMAKE_PREFIX_PATH=/opt/Qt/5.9.1/gcc_64/lib/cmake",
+                "."
+            ],
             "group": "build",
             "presentation": {
                 "echo": true,
@@ -14,6 +37,10 @@
                 "showReuseMessage": true,
                 "clear": true
             },
-            "problemMatcher": []        }
+            "problemMatcher": [],
+            // "dependsOn": [
+            //     "clear"
+            // ]
+        }
     ]
 }
